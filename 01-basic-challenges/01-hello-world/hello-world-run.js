@@ -1,5 +1,3 @@
-const helloWorld = () => 'Hello World!';
+const helloWorld = require('./hello-world');
 
 console.log(helloWorld());
-
-module.exports = helloWorld;
