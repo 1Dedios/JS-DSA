@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/1Dedios/JS-DSA/issues"
   },
-  "homepage": "https://github.com/1Dedios/JS-DSA#readme"
+  "homepage": "https://github.com/1Dedios/JS-DSA#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
