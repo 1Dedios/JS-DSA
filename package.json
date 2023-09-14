@@ -1,0 +1,26 @@
+{
+  "name": "100-dsa-js-challenges",
+  "version": "1.0.0",
+  "description": "100 JavaScript challenges involving DSA",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1Dedios/JS-DSA.git"
+  },
+  "keywords": [
+    "javscript",
+    "data",
+    "structure",
+    "algorithms",
+    "dsa"
+  ],
+  "author": "Eddie P, Dedios",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/1Dedios/JS-DSA/issues"
+  },
+  "homepage": "https://github.com/1Dedios/JS-DSA#readme"
+}
