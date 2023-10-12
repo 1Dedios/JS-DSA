@@ -12,7 +12,7 @@ const countOccurrences = (string, character) => {
   let splitString = string.split('');
 
   for (let i = 0; i < splitString.length; i++) {
-    if (character == splitString[i]) {
+    if (character == splitString.length[i]) {
       counter++;
     }
   }
