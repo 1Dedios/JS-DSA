@@ -4,3 +4,5 @@ const maxNumber = (arr) => {
   let maxNum = Math.max(...arr);
   return maxNum;
 };
+
+module.exports = maxNumber;
