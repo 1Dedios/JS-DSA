@@ -18,6 +18,8 @@ const findMaxNumber = (arr) => {
   return maxNumber;
 };
 
+// NOT using the classic loop but a for...of loop
+
 const findMaxDifferentImplementation = (arr) => {
   let maxNumber = arr[0];
 
