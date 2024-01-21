@@ -18,4 +18,16 @@ const findMaxNumber = (arr) => {
   return maxNumber;
 };
 
-module.exports = maxNumber;
+const findMaxDifferentImplementation = (arr) => {
+  let maxNumber = arr[0];
+
+  for (const element of arr) {
+    if (element > maxNumber) {
+      maxNumber = element;
+    }
+  }
+
+  return maxNumber;
+};
+
+module.exports = findMaxDifferentImplementation;
