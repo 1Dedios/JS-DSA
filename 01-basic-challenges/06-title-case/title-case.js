@@ -1,28 +1,31 @@
 // write a function called titleCase that takes in a string and returns the string with the first letter of each word capitalized
 
 const titleCase = (str) => {
-  // iterate through string
-  // capitalize the first letter of the string
-  // if current element is a space then capitalize the next letter and increase loop by one
-  // return the string
-
-  let array_of_string = str.split('');
-
-  console.log(array_of_string);
+  let array_of_string = str.split(' ');
+  // let array_of_string = str.split('');
 
   for (let i = 0; i < array_of_string.length; i++) {
-    if (i === 0) {
-      array_of_string[i].toUpperCase();
-    }
+    /* THE CODE THAT'S BEEN COMMENTED OUT IS ONE IMPLEMENTATION THAT WORKS IN O(n) */
+    //   if (i === 0) {
+    //     array_of_string[i] = array_of_string[i].toUpperCase();
+    //   }
 
-    if (array_of_string[i] == ' ') {
-      array_of_string[i + 1].toUpperCase();
-    }
+    //   if (array_of_string[i] == ' ') {
+    //     array_of_string[i + 1] = array_of_string[i + 1].toUpperCase();
+    //   }
+    // }
+
+    // let capString = array_of_string.join(' ');
+
+    // return capString;
+
+    array_of_string[i] =
+      array_of_string[i].charAt(0).toUpperCase() + array_of_string[i].slice(1);
   }
 
-  let capString = array_of_string.join(' ');
-  console.log(capString);
-  return capString;
+  let sentence = array_of_string.join(' ');
+
+  return sentence;
 };
 
 module.exports = titleCase;
