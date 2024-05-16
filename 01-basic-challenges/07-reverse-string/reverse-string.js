@@ -6,17 +6,20 @@ const reverseString = (str) => {
   // loop through the array from the end and enter them into the new array
   // join the newly filled array and return it
 
-  let stringArray = str.split(' ');
+  let stringArray = str.split('');
   let backwardsArray = [];
-  let backwardsArrayCount = 0;
+  let backwardsArrayIndex = 0;
 
-  for (let i = -1; i > -stringArray.length; i++) {
-    backwardsArray[backwardsArrayCount] = stringArray[i];
-    backwardsArrayCount++;
+  if (str === ' ' || str === '') {
+    return str;
   }
-  console.log(backwardsArray.join(''));
 
-  return backwardsArray.join(' ');
+  for (let i = stringArray.length - 1; i >= 0; i--) {
+    backwardsArray[backwardsArrayIndex] = stringArray[i];
+    backwardsArrayIndex++;
+  }
+
+  return backwardsArray.join('');
 };
 
 module.exports = reverseString;
