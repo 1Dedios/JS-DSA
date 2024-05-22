@@ -1,21 +1,17 @@
 // count how many vowels in a string
 
 const countVowels = (str) => {
-  // create counter
-  // loop through str
-  // if element is a vowel increase count
-  // finally return counter
-  // TODO: place vowel in hashmap to compare efficiently
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
 
   let counter = 0;
-  let strArray = str.split('');
+  let strArray = str.toLowerCase().split('');
 
-  for (let i = 0; i < str.length; i++) {
-    // if (strArray[i] == a vowel)
-    //  increase counter)
+  for (let i = 0; i < strArray.length; i++) {
+    if (vowels.includes(strArray[i])) {
+      counter++;
+    }
   }
 
-  // return counter
   return counter;
 };
 
