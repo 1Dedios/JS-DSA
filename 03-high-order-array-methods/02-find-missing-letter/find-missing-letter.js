@@ -30,10 +30,21 @@ const findMissingLetter = (array) => {
     'Z',
   ];
 
-  const startingIndex = alphabet.indexOf(array[0]);
-  const loopLength = array.loopLength;
+  let startingIndex = alphabet.indexOf(array[0]);
+  const loopLength = array.length;
+  const endIndex = startingIndex + loopLength;
+  let j = 0;
 
   // loop through alphabet - at startingindex
   // nested loop through array given
   // if array element given doesn't match the alphabet element return the element and end the loop
+
+  for (let i = startingIndex; i < endIndex; i++) {
+    if (alphabet[i] != array[j]) {
+      return alphabet[i];
+    }
+    j++;
+  }
 };
+
+module.exports = findMissingLetter;
