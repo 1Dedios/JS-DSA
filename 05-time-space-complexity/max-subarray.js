@@ -15,7 +15,6 @@ const maxSubarraySum = (arr, k) => {
     if (subMax > maxSum) {
       maxSum = subMax;
     }
-    //clearing submax
     subMax = 0;
   }
 
