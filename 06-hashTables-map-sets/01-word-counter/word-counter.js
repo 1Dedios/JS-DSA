@@ -4,7 +4,6 @@
 
 const wordCounter = (string, word) => {
   const stringArray = string.split(' ');
-  console.log(stringArray);
   let wordMap = new Map();
 
   for (let i = 0; i < stringArray.length + 1; i++) {
