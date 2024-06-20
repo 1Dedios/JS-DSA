@@ -1,5 +1,7 @@
 // write a function that a accepts a string and word and returns how many times that word appears in the string
 
+// Edge Cases Missing: not accounting for capitalization or punctuation (, . etc)
+
 const wordCounter = (string, word) => {
   const stringArray = string.split(' ');
   console.log(stringArray);
