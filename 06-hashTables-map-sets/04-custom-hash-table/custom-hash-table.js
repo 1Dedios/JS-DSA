@@ -15,6 +15,11 @@ class HashTable {
     return hash % max;
   }
 
+  print() {
+    return this.storage;
+  }
+
+  // My attempts at creating the other methods
   set(key, val) {
     this.set(key, val);
   }
