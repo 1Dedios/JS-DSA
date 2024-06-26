@@ -50,10 +50,6 @@ class HashTable {
     return this.storage;
   }
 
-  print() {
-    return this.storage;
-  }
-
   has(key) {
     return this.has(key);
   }
