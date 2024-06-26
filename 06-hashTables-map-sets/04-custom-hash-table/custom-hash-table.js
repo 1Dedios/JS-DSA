@@ -15,20 +15,26 @@ class HashTable {
     return hash % max;
   }
 
-  print() {
-    return this.storage;
-  }
-
-  // My attempts at creating the other methods
   set(key, val) {
-    this.storage.push(set(key, val));
-    // this.storage.push([key, val])
-    // this.storage.push([this.set(key, val)])
+    let index = this._hash(key, this.limit);
 
-    // I was completely off above lol
+    if (this.storage[index] === undefined) {
+      this.storage[index] = [[key, val]];
+    } else {
+      let isInserted = false;
 
-    // the index below is accessing the hash value to access the value in the array - of course to do this it requires a key
-    let index = this._hash(key, this.limit)
+      // this is checking for collisions
+      for (let i = 0; i < this.storage[index].length; i++) {
+        if (this.storage[index][i][0] === key) {
+          this.storage[index][i][1] = val;
+          isInserted = true;
+        }
+      }
+
+      if (!isInserted) {
+        this.storage[index].push([key, val]);
+      }
+    }
   }
 
   get(key) {
@@ -38,11 +44,18 @@ class HashTable {
 
   remove(key) {
     this.set(key, null);
-    // this.storage.push(set(key, null))
+  }
+
+  print() {
+    return this.storage;
+  }
+
+  print() {
+    return this.storage;
   }
 
   has(key) {
-    return this.has(key) || false;
+    return this.has(key);
   }
 
   size() {
