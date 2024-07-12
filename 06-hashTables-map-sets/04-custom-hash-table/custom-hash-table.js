@@ -43,17 +43,52 @@ class HashTable {
     if (index === undefined) {
       console.log('Unable to find');
     } else {
-      /**
-       *
-       * So this was implemented by Traversy Media by iterating over the hash table and returning it.
-       * I simply just returned the value because if it were not present then the first if condition would have caught it. Going through the hashtable when you were given the key is not as optimal as going straight to the value. The first approach is definitely O(n) while the approach I implemented is constant time O(1). Of course, my approach can degrade to O(n) overtime with a large enough hash table handling collisions. As you can see currently my hash table does not handle collisions.
-       */
-      console.log(`${this.storage[index][0][1]}`);
+      if (this.storage[index]) {
+        if (
+          this.storage[index].length === 1 &&
+          this.storage[index][0][0] === key
+        ) {
+          return `The value of ${key} is ${this.storage[index][0][1]}`;
+        } else {
+          for (let i = 0; this.storage[index].length; i++) {
+            if (this.storage[index][i][0] === key) {
+              return `The value of ${key} is ${this.storage[index][i][1]}`;
+            }
+          }
+        }
+      }
     }
   }
 
   remove(key) {
-    this.set(key, null);
+    let index = this._hash(key, this.limit);
+
+    if (this.storage[index]) {
+      if (
+        this.storage[index].length === 1 &&
+        this.storage[index][0][0] === key
+      ) {
+        delete this.storage[index];
+        return `${key} has been successfully removed.`;
+      } else {
+        for (let i = 0; i < this.storage[index].length; i++) {
+          if (this.storage[index][i] === key) {
+            delete this.storage[index][i];
+            return `${key} has been successfully removed.`;
+          }
+        }
+      }
+    } else {
+      return `${key} does not exist in this hashtable.`;
+    }
+  }
+
+  has(key) {
+    return this.has(key);
+  }
+
+  size() {
+    return this.storage.length;
   }
 
   print() {
@@ -64,14 +99,6 @@ class HashTable {
         console.log(`Bucket ${i}: undefined`);
       }
     }
-  }
-
-  has(key) {
-    return this.has(key);
-  }
-
-  size() {
-    return this.storage.length;
   }
 }
 
