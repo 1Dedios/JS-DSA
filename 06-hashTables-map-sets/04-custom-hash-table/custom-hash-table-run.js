@@ -26,3 +26,6 @@ console.log(myHashTable.remove('John'));
 
 console.log(myHashTable.print());
 console.log(myHashTable.size());
+console.log(myHashTable.has('John'));
+console.log(myHashTable.has('Kelly'));
+console.log(myHashTable.has('kelp'));

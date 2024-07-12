@@ -84,7 +84,24 @@ class HashTable {
   }
 
   has(key) {
-    return this.has(key);
+    let index = this._hash(key, this.limit);
+
+    if (this.storage[index]) {
+      if (
+        this.storage[index].length === 1 &&
+        this.storage[index][0][0] === key
+      ) {
+        return this.storage[index][0][0] === key;
+      } else {
+        for (let i = 0; i < this.storage[index].length; i++) {
+          if (this.storage[index][i][0] === key) {
+            return this.storage[index][i][0] === key;
+          }
+        }
+      }
+    } else {
+      return this.storage[index] === key;
+    }
   }
 
   size() {
