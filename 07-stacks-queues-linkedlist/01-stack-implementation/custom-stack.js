@@ -6,16 +6,18 @@ class Stack {
   }
 
   push(value) {
-    if (isFull()) {
+    if (this.isFull()) {
       return false;
     }
 
     this.top++;
-    this.storage[this.top] = value;
+    this.stack[this.top] = value;
     return true;
   }
 
   isFull() {
-    return this.storage.length === this.maxSize - 1;
+    return this.stack.length === this.maxSize - 1;
   }
 }
+
+module.exports = Stack;
